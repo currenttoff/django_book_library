@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz@6..72&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: aqua;
+        background-image: url("https://themetamodernist.files.wordpress.com/2017/12/library-wallpaper-50371-52062-hd-wallpapers.jpg");
+        font-family: "Newsreader", serif;
+        padding-top: 50px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: black;
+        font-family: "Arial", serif;
+        font-weight: 500;
+      }
+
+      a {
+        color: green;
+      }
+      p {
+        color: black;
+      }
+
+      .available-books {
+        color: black;
+        background-color: lightblue;
+      }
+
+      .container {
+        max-width: 550px;
+        margin: auto;
+        background-color: lightgray;
+        box-shadow: 2px 2px 13px -4px black;
+      }
+
+      .header-nav {
+        display: flex;
+        justify-content: space-between;
+        color: yellow;
+        padding: 10px;
+        border-radius: 5px 5px 0 0;
+        background: linear-gradient(
+          90deg,
+          lightblue 0,
+          lightblue 43%,
+          lightblue 100%
+        );
+      }
+
+      .header-nav a {
+        color: blue;
+        text-decoration: none;
+      }
+
+      .book-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: lightblue;
+        border-top: 1px solid black;
+      }
+
+      .book-title {
+        display: flex;
+      }
+
+      .book-title a {
+        text-decoration: none;
+        color: black;
+        margin-left: 10px;
+      }
+
+      .book-finished-icon {
+        height: 20px;
+        width: 20px;
+        background-color: green;
+        border-radius: 25%;
+      }
+
+      .book-unfinished-icon {
+        height: 20px;
+        width: 20px;
+        background-color: white;
+        border-radius: 25%;
+      }
+
+      .delete-link {
+        text-decoration: none;
+        font-weight: 900;
+        color: red;
+        font-size: 22px;
+        line-height: 0;
+      }
+
+      input,
+      textarea {
+        border: 1px Solid black;
+        border-radius: 5px;
+        padding: 10px;
+        width: 90%;
+      }
+
+      label {
+        padding-top: 10px;
+        display: block;
+      }
+
+      .button {
+        border: 1px solid red;
+        margin-top: 10px;
+        background-color: white;
+        color: red;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .card-body {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">{% block content %} {% endblock content %}</div>
+  </body>
+</html>
