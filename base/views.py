@@ -36,6 +36,7 @@ class RegisterPage(FormView):
     redirect_authenticated_user = True
     success_url = reverse_lazy('books')
 
+    #validating book entry
     def form_valid(self, form):
         user = form.save()
         if(user is not None):
@@ -50,8 +51,7 @@ class RegisterPage(FormView):
 
 
 # CRUD Functionalities
-# after adding LoginRequiredMixin it will be restricted
-# need to override default urls
+#Retrieve all the books. 
 class BookList(LoginRequiredMixin, ListView):
     model = Books
     context_object_name = 'books'
@@ -64,13 +64,13 @@ class BookList(LoginRequiredMixin, ListView):
             finished_reading=False).count()
         return context
 
-
+#specific book details
 class BookDetail(LoginRequiredMixin, DetailView):
     model = Books
     context_object_name = 'book'
     template_name = 'base/book.html'
 
-
+#Create an entry for Books. 
 class BookCreate(LoginRequiredMixin, CreateView):
     model = Books
     fields = ['title', 'author', 'finished_reading', 'review']
@@ -82,14 +82,14 @@ class BookCreate(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
         return super(BookCreate, self).form_valid(form)
 
-
+#Update a book
 class BookUpdate(LoginRequiredMixin, UpdateView):
     model = Books
     fields = ['title', 'author', 'finished_reading', 'review']
     success_url = reverse_lazy('books')
     template_name = 'base/book_form.html'
 
-
+#Delete a book
 class BookDelete(LoginRequiredMixin, DeleteView):
     model = Books
     context_object_name = 'book'
